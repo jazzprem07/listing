@@ -1,0 +1,10 @@
+.btn{
+    float: right;
+    padding: 5px;
+    margin: 10px;
+}
+tr,table,td,th {
+    border-spacing: 20px;
+  
+    border: ridge;
+}

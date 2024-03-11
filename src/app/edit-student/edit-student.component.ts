@@ -1,0 +1,60 @@
+import { Component } from '@angular/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
+import {  MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule,MatDatepickerToggle } from '@angular/material/datepicker';
+import { StudentService } from '../services/student.service';
+import { FormsModule, NgForm } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+
+
+@Component({
+  selector: 'app-edit-student',
+  standalone: true,
+  imports: [MatDialogModule,MatFormFieldModule,
+    MatInputModule,MatOptionModule,
+    MatSelectModule,MatDatepickerModule,
+    MatDatepickerToggle,MatNativeDateModule,
+    FormsModule,CommonModule],
+  templateUrl: './edit-student.component.html',
+  styleUrl: './edit-student.component.css'
+})
+
+export class EditStudentComponent {
+  id: any;
+dob: any;
+section: any;
+class: any;
+name: any;
+
+  // id!: string | null;
+  constructor(private stuserve:StudentService,private route: ActivatedRoute){
+
+  }
+  contactEdit(data:any){
+    return this.stuserve.stuEdit(data.value);
+  }
+  
+  student:any;
+
+  ngOnInit() {
+    // console.log(this.id+"ngOnInit")
+    // this.id = this.route.snapshot.paramMap.get('id');
+    // return this.stuserve.stuEdit;
+    this.route.params.subscribe(paramsId => {
+      this.id = paramsId['id'];
+      //console.log(this.id+"ngOnInit");
+  this.student=    this.stuserve.getStudentById(this.id);
+  // console.log("ooooooooo");
+  // console.log(this.student);
+      //return this.stuserve.stuEdit(this.id);
+  });
+ }
+  getStulist(){
+    return this.stuserve.getStuList();
+  }
+  
+}
