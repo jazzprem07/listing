@@ -30,7 +30,6 @@ section: any;
 class: any;
 name: any;
 
-  // id!: string | null;
   constructor(private stuserve:StudentService,private route: ActivatedRoute){
 
   }
@@ -41,16 +40,10 @@ name: any;
   student:any;
 
   ngOnInit() {
-    // console.log(this.id+"ngOnInit")
-    // this.id = this.route.snapshot.paramMap.get('id');
-    // return this.stuserve.stuEdit;
     this.route.params.subscribe(paramsId => {
       this.id = paramsId['id'];
-      //console.log(this.id+"ngOnInit");
   this.student=    this.stuserve.getStudentById(this.id);
-  // console.log("ooooooooo");
-  // console.log(this.student);
-      //return this.stuserve.stuEdit(this.id);
+
   });
  }
   getStulist(){

@@ -1,0 +1,74 @@
+
+    <!-- <div *ngFor="let item of view()">
+    <label for="id">{{item.id}}</label>
+    <label for="id">{{item.id}}</label>
+  
+    </div>
+  -->
+  <!-- <label for="id" [(ngModel)]="data.id" name="name" ngDefaultControl>{{data.id}}</label>
+  <label for="name" [(ngModel)]="data.name" name="name" ngDefaultControl>{{data.name}}</label>
+  <label for="class" [(ngModel)]="data.class" name="name" ngDefaultControl>{{data.class}}</label>
+  <label for="" [(ngModel)]="data.section" name="name" ngDefaultControl>{{data.section}}</label>
+  <label for="" [(ngModel)]="data.dob" name="name" ngDefaultControl>{{data.dob}}</label> -->
+  <div mat-dialog-title> Student Profile</div>
+  <div mat-dialog-content > 
+  
+      <div class="row">
+          <mat-label>Id :</mat-label>
+          <mat-label  [(ngModel)]="data.id" name="id"  ngDefaultControl><b>{{data.id}}</b></mat-label>
+        </div>
+        <div class="row">
+            <mat-label>Name :</mat-label>
+            <mat-label  [(ngModel)]="data.name" name="name"  ngDefaultControl><b>{{data.name}}</b></mat-label>
+          </div>
+          <div class="row">
+            <mat-label>Class :</mat-label>
+            <mat-label  [(ngModel)]="data.class" name="class"  ngDefaultControl><b>{{data.class}}</b></mat-label>
+          </div>
+          <div class="row">
+            <mat-label>Section :</mat-label>
+            <mat-label  [(ngModel)]="data.section" name="section"  ngDefaultControl><b>{{data.section}}</b></mat-label>
+          </div>
+          <div class="row">
+            <mat-label>DOB :</mat-label>
+            <mat-label  [(ngModel)]="data.dob" name="dob"  ngDefaultControl><b>{{data.dob}}</b></mat-label>
+          </div>
+        </div>
+    
+<!-- <div mat-dialog-title>Edit Student</div>
+<div mat-dialog-content > 
+
+    <div class="row">
+      <mat-form-field  appearance="fill" >
+        <mat-label>Id</mat-label>
+        <mat-label  [ngModel]="" name="id"  ></mat-label>
+      </mat-form-field>
+   
+    <mat-form-field  appearance="fill">
+        <mat-label>Name</mat-label>
+        <mat-label   [ngModel]="" name="name" ></mat-label>
+      </mat-form-field>
+      </div>
+      <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Class</mat-label>
+        <mat-label   [ngModel]="" name="class" ></mat-label>
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+        <mat-label >Section</mat-label>
+        <mat-label [ngModel]="" name="section" ></mat-label>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Dob</mat-label>
+        <mat-label   [ngModel]="" name="dob" ></mat-label>
+        
+
+      </mat-form-field>
+    
+   
+    </div>
+</div>
+ -->

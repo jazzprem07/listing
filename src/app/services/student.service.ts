@@ -5,6 +5,7 @@ import stuJson from "../../assets/Stu.json";
 import { EditStudentComponent } from '../edit-student/edit-student.component';
 import { RouterLink } from '@angular/router';
 import { IfStmt } from '@angular/compiler';
+import { StudentViewComponent } from '../student-view/student-view.component';
 
 class STU {
   id!: number;
@@ -25,33 +26,41 @@ export class StudentService {
 constructor(private _diaalog: MatDialog){
       console.log(this.stuList);
 }
+//register
   register(stuData:any){
     console.log(stuData);
-
     this.stuList.push(stuData);
     this._diaalog.closeAll();
   }
-  
+  //table list
   getStuList(){
     return this.stuList;
   }
+  //open popup
   openRegister(){
     this._diaalog.open(AddStudentComponent);
   }
-
-  delete(item:any){
-    // console.log(item.id+"qwertyuioplkjhg")
-    // console.log(item.id+1+"qwertyuioplkjhg")
-    this.stuList = this.stuList.filter((stuList) => stuList.id !== item.id);
-   // this.stuList.splice(i);
-   console.log(this.stuList)
+  openView(item:any){
+    let i = 0;
+    console.log(item);
+    for (i; i < this.stuList.length; i++) {
+      if(item.id==this.stuList[i].id)
+      {
+       
+        this._diaalog.open(StudentViewComponent ,{data:this.stuList[i]});
+        
+      }
+    }
+    //  return null;
   }
-
-
+  //delete
+  delete(item:any){
+    this.stuList = this.stuList.filter((stuList) => stuList.id !== item.id);
+  }
   //edit
+  //uppdate
   update:any=[];
   stuEdit(item:any){
-      // this.stuList.(item.name);
       this.update=item;
       console.log(this.update);
       for (let i = 0; i < this.stuList.length; i++) {
@@ -60,19 +69,12 @@ constructor(private _diaalog: MatDialog){
           this.stuList[i]=this.update;
           return this.stuList[i];
         }
-   }
-  // return null;
-  // }
-      // if (item.id==this.stuList) {
-        
-      // }
-      
+      }
       return this.update;
 
   }
-    
+   //get id values 
   getStudentById(id:any){
-    
     for (let i = 0; i < this.stuList.length; i++) {
           if(id==this.stuList[i].id)
           {

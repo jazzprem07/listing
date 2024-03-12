@@ -1,10 +1,9 @@
 
 <div mat-dialog-title>Edit Student</div>
-<!-- *ngFor="let value of getStuList()" -->
 <div mat-dialog-content > 
   <form (ngSubmit)="contactEdit(x)" #x=ngForm >
     <div class="row">
-      <mat-form-field  appearance="fill">
+      <mat-form-field  appearance="fill" >
         <mat-label>Id</mat-label>
         <input matInput placeholder="Id" [ngModel]="student.id" name="id"  >
       </mat-form-field>
@@ -33,23 +32,7 @@
 
       </mat-form-field>
     
-    <input type="submit" [disabled]="!x.valid" value="Update">  
-      
+    <input type="submit" [disabled]="!x.valid" value="Update">    
     </div>
 </form>
-        <!-- Id:<input type="text" ngModel name="Id" required><br>
-        Student Name:<input type="text" ngModel name="uname" required><br>
-        Class :<input type="text" ngModel="class" name="class" required><br>
-        Section :<input type="text" ngModel="section" name="section" required><br>
-        DOB:<input type="text" ngModel="date" name="date"><br>
-        -->
-    
-    
      </div>
-
-<!-- <div mat-dialog-actions>
-    <div class="row">
-    <button mat-raised-button >Cancel</button>
-    <button mat-raised-button color="primary" (click)="register()">Save</button>
-    </div>
-</div> -->

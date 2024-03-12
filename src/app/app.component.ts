@@ -26,13 +26,16 @@ export class AppComponent {
   openRegister(){
      return this.studentService.openRegister();
   }
+  openView(item:any){
+    return this.studentService.openView(item);
+  }
   delete(item:any){
     console.log(item)
     return this.studentService.delete(item);
   }
   stuEdit(item:any){
     //return this.studentService.stuEdit(item);
-    console.log(item);
+   // console.log(item);
     this.router.navigate(["/edit",item.id]);
   }
   }
