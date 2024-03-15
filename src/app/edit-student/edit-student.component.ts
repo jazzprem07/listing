@@ -8,7 +8,7 @@ import { MatDatepickerModule,MatDatepickerToggle } from '@angular/material/datep
 import { StudentService } from '../services/student.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -30,11 +30,12 @@ section: any;
 class: any;
 name: any;
 
-  constructor(private stuserve:StudentService,private route: ActivatedRoute){
+  constructor(private stuserve:StudentService,private route: ActivatedRoute,private router :Router){
 
   }
-  contactEdit(data:any){
-    return this.stuserve.stuEdit(data.value);
+  contactEdit(data:any){  
+     this.stuserve.stuEdit(data.value);
+     this.router.navigate(["/"]);
   }
   
   student:any;
@@ -49,5 +50,7 @@ name: any;
   getStulist(){
     return this.stuserve.getStuList();
   }
-  
+  nav(){
+
+  }
 }

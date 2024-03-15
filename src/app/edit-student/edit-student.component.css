@@ -6,3 +6,8 @@
             width: 100%;
     }
 }
+.btn{
+    float: right;
+    padding: 5px;
+    margin: 10px;
+}

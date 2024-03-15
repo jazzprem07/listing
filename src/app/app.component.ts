@@ -3,7 +3,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 import { StudentService } from './services/student.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -23,9 +23,9 @@ export class AppComponent {
   getStulist(){
     return this.studentService.getStuList();
   }
-  openRegister(){
-     return this.studentService.openRegister();
-  }
+  // openRegister(){
+  //    return this.studentService.openRegister();
+  // }
   openView(item:any){
     return this.studentService.openView(item);
   }
@@ -38,5 +38,10 @@ export class AppComponent {
    // console.log(item);
     this.router.navigate(["/edit",item.id]);
   }
+
+  contact(data:NgForm){
+     return this.studentService.register(data.value);
+
+ }
   }
 

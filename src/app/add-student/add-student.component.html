@@ -1,54 +1,34 @@
-<div mat-dialog-title>Add Student</div>
-<div mat-dialog-content > 
-  <form (ngSubmit)="contact(x)" #x=ngForm>
-    <div class="row">
-      <mat-form-field  appearance="fill">
-        <mat-label>Id</mat-label>
-        <input matInput placeholder="Id" ngModel name="id" type="number">
-      </mat-form-field>
-    
-    <mat-form-field  appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Name" ngModel name="name">
-      </mat-form-field>
+<!-- 
+ 
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Student</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="row">
-      <mat-form-field appearance="fill">
-        <mat-label>Class</mat-label>
-        <input matInput placeholder="Class" ngModel name="class">
-      </mat-form-field>
-   
-      <mat-form-field appearance="fill">
-        <mat-label >Section</mat-label>
-        <input matInput placeholder="Section" ngModel name="section">
-      </mat-form-field>
-    </div>
-    <div class="row">
-      <mat-form-field>
-        <mat-label>Choose a date</mat-label>
-        <input matInput  ngModel name="dob">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-
-      </mat-form-field>
-    </div>
-    <div class="row">
-    <input type="submit" [disabled]="!x.valid" value="Add"> 
-  </div>
+      <div class="modal-body">
+        <form (ngSubmit)="contact(x)" #x=ngForm>
+          <div >
+              <label class="form-label">Id :</label>
+              <input class="form-control" placeholder="Id" ngModel name="id" type="number"><br>
+              <label class="form-label">Name :</label>
+              <input  class="form-control" placeholder="Name" ngModel name="name"><br>
+              <label class="form-label">Class :</label>
+              <input class="form-control"  placeholder="Class" ngModel name="class"><br>
+              <label class="form-label">Section :</label>
+              <input class="form-control"  placeholder="Section" ngModel name="section"><br>
+              <label class="form-label">DOB :</label>
+              <input  class="form-control" ngModel name="dob" type="date">
+          </div>
+          <div class="row">
+          <input type="submit" [disabled]="!x.valid" value="Add"> 
+        </div>
       </form>
-      
-        <!-- Id:<input type="text" ngModel name="Id" required><br>
-        Student Name:<input type="text" ngModel name="uname" required><br>
-        Class :<input type="text" ngModel="class" name="class" required><br>
-        Section :<input type="text" ngModel="section" name="section" required><br>
-        DOB:<input type="text" ngModel="date" name="date"><br>
-        -->
-    
-    
-     </div>
-
-<!-- <div mat-dialog-actions>
-    <div class="row">
-    <button mat-raised-button >Cancel</button>
-    <button mat-raised-button color="primary" (click)="register()">Save</button>
+      </div>
     </div>
+  </div>
 </div> -->

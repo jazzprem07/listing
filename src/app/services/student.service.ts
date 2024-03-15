@@ -6,6 +6,7 @@ import { EditStudentComponent } from '../edit-student/edit-student.component';
 import { RouterLink } from '@angular/router';
 import { IfStmt } from '@angular/compiler';
 import { StudentViewComponent } from '../student-view/student-view.component';
+import {Location} from '@angular/common'; 
 
 class STU {
   id!: number;
@@ -23,23 +24,23 @@ class STU {
 
 export class StudentService {
   stuList:STU[]=stuJson;
-constructor(private _diaalog: MatDialog){
+ 
+constructor(private _diaalog: MatDialog,private location: Location){
       console.log(this.stuList);
 }
 //register
-  register(stuData:any){
+  register(stuData:any){  
     console.log(stuData);
     this.stuList.push(stuData);
-    this._diaalog.closeAll();
-  }
+     }
   //table list
   getStuList(){
     return this.stuList;
   }
   //open popup
-  openRegister(){
-    this._diaalog.open(AddStudentComponent);
-  }
+  // openRegister(){
+  //   this._diaalog.open(AddStudentComponent);
+  // }
   openView(item:any){
     let i = 0;
     console.log(item);
@@ -67,7 +68,9 @@ constructor(private _diaalog: MatDialog){
         if(item.id==this.stuList[i].id)
         {
           this.stuList[i]=this.update;
+         
           return this.stuList[i];
+          
         }
       }
       return this.update;
